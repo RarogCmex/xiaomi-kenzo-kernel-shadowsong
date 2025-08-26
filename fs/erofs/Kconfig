@@ -39,20 +39,6 @@ config EROFS_FS_XATTR
 
 	  If unsure, say N.
 
-config EROFS_FS_POSIX_ACL
-	bool "EROFS Access Control Lists"
-	depends on EROFS_FS_XATTR
-	select FS_POSIX_ACL
-	default y
-	help
-	  Posix Access Control Lists (ACLs) support permissions for users and
-	  groups beyond the owner/group/world scheme.
-
-	  To learn more about Access Control Lists, visit the POSIX ACLs for
-	  Linux website <http://acl.bestbits.at/>.
-
-	  If you don't know what Access Control Lists are, say N.
-
 config EROFS_FS_SECURITY
 	bool "EROFS Security Labels"
 	depends on EROFS_FS_XATTR
@@ -65,14 +51,3 @@ config EROFS_FS_SECURITY
 	  the extended attribute support in advance.
 
 	  If you are not using a security module, say N.
-
-config EROFS_FS_ZIP
-	bool "EROFS Data Compression Support"
-	depends on EROFS_FS
-	select LZ4_DECOMPRESS
-	default y
-	help
-	  Enable fixed-sized output compression for EROFS.
-
-	  If you don't want to enable compression feature, say N.
-
