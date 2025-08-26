@@ -42,16 +42,16 @@ fi
 # Do Kenzo Configs
 #
 export ARCH=arm64
-make shadow_song_defconfig
+make shadow_trax_defconfig
 #
 # Export Clang path
 #
 export PATH="${PATH}:/home/nesara/proton-clang/bin/"
-export KBUILD_BUILD_USER="rarogcmex"
+export KBUILD_BUILD_USER="trax85"
 #
 # Build Shadow Kernel
 #
-make	-j48 \
+make	-j4 \
 	CC=clang \
 	CROSS_COMPILE=aarch64-linux-gnu- \
 	CROSS_COMPILE_ARM32=arm-linux-gnueabi- \
