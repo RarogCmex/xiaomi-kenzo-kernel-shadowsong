@@ -53,13 +53,13 @@ make shadow_song_defconfig
 #
 make	-j$(nproc) \
 	CC=clang \
+	OBJDUMP=llvm-objdump STRIP=llvm-strip \
+	AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy \
 	CLANG_TRIPLE=aarch64-none-linux-gnu- \
 	CROSS_COMPILE_ARM32=arm-none-linux-gnueabihf- \
 	CROSS_COMPILE=aarch64-none-linux-gnu-
 
 
-#	OBJDUMP=llvm-objdump STRIP=llvm-strip \
-#	AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy \
 #
 # Append date,time and Export Image and device tree
 #

@@ -85,7 +85,7 @@ echo -e "$yellow\n Build succesful, generating flashable zip now \n $white"
 zip -r Shadow-Trax-Kernel-$date.zip * > /dev/null
 End=$(date +"%s")
 Diff=$(($End - $Start))
-echo -e "$yellow $KERNEL_DIR/export/$VERSION/Shadow-Trax-Kernel-$date.zip \n$white"
+echo -e "$yellow $KERNEL_DIR/build/$VERSION/Shadow-Trax-Kernel-$date.zip \n$white"
 echo -e "$gre << Build completed in $(($Diff / 60)) minutes and $(($Diff % 60)) seconds >> \n $white"
 fi
 cd $KERNEL_DIR
