@@ -42,7 +42,7 @@ export ARCH=arm64
 #
 # Export Clang path
 #
-export PATH="${PATH}:${HOME}/toolchains/clang-r450784e/bin/:${HOME}/toolchains/arm-gnu-toolchain-14.2.rel1-x86_64-aarch64-none-linux-gnu/bin"
+export PATH="${PATH}:${HOME}/toolchains/clang-r450784e/bin/:${HOME}/toolchains/arm-gnu-toolchain-14.2.rel1-x86_64-aarch64-none-linux-gnu/bin:${HOME}/toolchains/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-linux-gnueabihf/bin"
 export KBUILD_BUILD_USER="rarogcmex"
 #
 # Do Kenzo Configs
@@ -54,8 +54,9 @@ make shadow_song_defconfig
 make	-j$(nproc) \
 	CC=clang \
 	CLANG_TRIPLE=aarch64-none-linux-gnu- \
-	CROSS_COMPILE_ARM32=arm-linux-gnueabi- \
-	CROSS_COMPILE=aarch64-none-linux-gnu- 
+	CROSS_COMPILE_ARM32=arm-none-linux-gnueabihf- \
+	CROSS_COMPILE=aarch64-none-linux-gnu-
+
 
 #	OBJDUMP=llvm-objdump STRIP=llvm-strip \
 #	AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy \
