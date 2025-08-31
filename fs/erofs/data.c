@@ -42,7 +42,7 @@ void *erofs_bread(struct erofs_buf *buf, erofs_blk_t blkaddr,
 		erofs_put_metabuf(buf);
 
 		page = read_cache_page_gfp(inode->i_mapping, index,
-				mapping_gfp_constraint(inode->i_mapping, ~__GFP_FS));
+				GFP_NOFS);
 		if (IS_ERR(page))
 			return page;
 

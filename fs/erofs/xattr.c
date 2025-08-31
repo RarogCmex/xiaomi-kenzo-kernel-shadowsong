@@ -5,6 +5,8 @@
  * Copyright (C) 2021-2022, Alibaba Cloud
  */
 #include <linux/security.h>
+#include <linux/wait.h>
+#include <linux/sched.h>
 #include "xattr.h"
 
 struct erofs_xattr_iter {
@@ -23,6 +25,12 @@ struct erofs_xattr_iter {
 	/* listxattr */
 	struct dentry *dentry;
 };
+
+static int erofs_xattr_bit_wait(void *word)
+{
+    schedule();
+    return 0;
+}
 
 static int erofs_init_inode_xattrs(struct inode *inode)
 {
@@ -43,7 +51,7 @@ static int erofs_init_inode_xattrs(struct inode *inode)
 		return 0;
 	}
 
-	if (wait_on_bit_lock(&vi->flags, EROFS_I_BL_XATTR_BIT, TASK_KILLABLE))
+	if (wait_on_bit_lock(&vi->flags, EROFS_I_BL_XATTR_BIT, erofs_xattr_bit_wait, TASK_KILLABLE))
 		return -ERESTARTSYS;
 
 	/* someone has initialized xattrs for us? */
