@@ -38,25 +38,27 @@ if [ $qc == 1 ]; then
 echo -e "$yellow Running make clean before compiling \n$white"
 make clean > /dev/null
 fi
-#
-# Do Kenzo Configs
-#
 export ARCH=arm64
-make shadow_trax_defconfig
 #
 # Export Clang path
 #
-export PATH="${PATH}:/home/nesara/proton-clang/bin/"
-export KBUILD_BUILD_USER="trax85"
+export PATH="${PATH}:${HOME}/toolchains/clang-r450784e/bin/:${HOME}/toolchains/arm-gnu-toolchain-14.2.rel1-x86_64-aarch64-none-linux-gnu/bin"
+export KBUILD_BUILD_USER="rarogcmex"
+#
+# Do Kenzo Configs
+#
+make shadow_song_defconfig
 #
 # Build Shadow Kernel
 #
-make	-j4 \
+make	-j$(nproc) \
 	CC=clang \
-	CROSS_COMPILE=aarch64-linux-gnu- \
+	CLANG_TRIPLE=aarch64-none-linux-gnu- \
 	CROSS_COMPILE_ARM32=arm-linux-gnueabi- \
-	OBJDUMP=llvm-objdump STRIP=llvm-strip \
-	AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy
+	CROSS_COMPILE=aarch64-none-linux-gnu- 
+
+#	OBJDUMP=llvm-objdump STRIP=llvm-strip \
+#	AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy \
 #
 # Append date,time and Export Image and device tree
 #
