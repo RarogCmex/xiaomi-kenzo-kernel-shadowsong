@@ -226,7 +226,7 @@ static void nfnetlink_rcv(struct sk_buff *skb)
 static void nfnetlink_bind(int group)
 {
 	const struct nfnetlink_subsystem *ss;
-	int type = nfnl_group2type[group];
+	int type = NFNL_SUBSYS_ID(group);
 
 	rcu_read_lock();
 	ss = nfnetlink_get_subsys(type);
