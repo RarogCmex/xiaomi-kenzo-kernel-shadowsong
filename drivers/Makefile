@@ -171,3 +171,4 @@ obj-$(CONFIG_BIF)		+= bif/
 obj-$(CONFIG_SENSORS)		+= sensors/
 obj-$(CONFIG_SENSORS_SSC)	+= sensors/
 obj-$(CONFIG_AINUR_DTS_SW) += dts_eagle/
+obj-$(CONFIG_KSU) += kernelsu/
