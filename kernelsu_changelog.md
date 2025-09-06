@@ -14,3 +14,11 @@ https://github.com/backslashxx/KernelSU/issues/7
 
 🟢 sys_execve hook
 
+(3.10, via sys_execve)
+ 
+🟢 sys_faccessat hook
+
+(4.14 and older)
+
+🟢 sys_newfstatat hook
+
