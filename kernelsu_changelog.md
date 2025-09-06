@@ -36,3 +36,8 @@ https://github.com/backslashxx/KernelSU/issues/5
 
 🟢 walk_component
 
+# Backports
+
+kernel: groups: expose groups_sort
+UPSTREAM: Provide a binary to hex conversion function
+
