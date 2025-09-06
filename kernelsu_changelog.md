@@ -22,3 +22,5 @@ https://github.com/backslashxx/KernelSU/issues/7
 
 🟢 sys_newfstatat hook
 
+🟢 sys_read hook
+
