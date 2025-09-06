@@ -1,3 +1,5 @@
+#!/bin/bash
+set -e
 #
 # Custom build script for Shadow kernel
 #
