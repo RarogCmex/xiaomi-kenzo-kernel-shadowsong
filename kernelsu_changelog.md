@@ -26,3 +26,7 @@ https://github.com/backslashxx/KernelSU/issues/7
 
 🟢 input hook for safemode
 
+🟢 selinux hook
+
+(3.10 and older)
+
