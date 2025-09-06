@@ -24,3 +24,5 @@ https://github.com/backslashxx/KernelSU/issues/7
 
 🟢 sys_read hook
 
+🟢 input hook for safemode
+
