@@ -10,3 +10,7 @@ Patched manual security hooks in security/security.c with:
 
 https://github.com/backslashxx/KernelSU/issues/7
 
+# Manual hooks
+
+🟢 sys_execve hook
+
