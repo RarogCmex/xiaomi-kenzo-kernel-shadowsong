@@ -12,6 +12,10 @@ https://github.com/backslashxx/KernelSU/issues/7
 
 # Manual hooks
 
+## scope-minimized manual hooks v1.5
+
+https://github.com/backslashxx/KernelSU/issues/5
+
 🟢 sys_execve hook
 
 (3.10, via sys_execve)
@@ -29,4 +33,6 @@ https://github.com/backslashxx/KernelSU/issues/7
 🟢 selinux hook
 
 (3.10 and older)
+
+🟢 walk_component
 
